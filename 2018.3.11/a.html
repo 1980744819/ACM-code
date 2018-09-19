@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 12px; line-height: 22px; word-wrap: break-word; } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } img { max-width: 100%; max-height: 100%; } a { color: #4080D0; text-decoration: none; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } a:hover { color: #4080D0; text-decoration: underline; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left: 5px solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ .vscode-light { color: rgb(30, 30, 30); } .vscode-dark { color: #DDD; } .vscode-high-contrast { color: white; } .vscode-light code { color: #A31515; } .vscode-dark code { color: #D7BA7D; } .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } .vscode-light blockquote, .vscode-dark blockquote { background: rgba(127, 127, 127, 0.1); border-color: rgba(0, 122, 204, 0.5); } .vscode-high-contrast blockquote { background: transparent; border-color: #fff; }
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-left: 40px; } .task-list-item { list-style-type: none; } .task-list-item-checkbox { vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="protect-sheep">Protect Sheep</h1>
+<div class="problemindexholder" problemindex="A">
+        <div class="ttypography"><div class="problem-statement"><div class="header"><div class="title">A. Protect Sheep</div><div class="time-limit"><div class="property-title">time limit per test</div>1 second</div><div class="memory-limit"><div class="property-title">memory limit per test</div>256 megabytes</div><div class="input-file"><div class="property-title">input</div>standard input</div><div class="output-file"><div class="property-title">output</div>standard output</div></div><div><p>Bob is a farmer. He has a large pasture with many sheep. Recently, he has lost some of them due to wolf attacks. He thus decided to place some shepherd dogs in such a way that all his sheep are protected.</p><p>The pasture is a rectangle consisting of <span class="tex-span"><i>R</i> × <i>C</i></span> cells. Each cell is either empty, contains a sheep, a wolf or a dog. Sheep and dogs always stay in place, but wolves can roam freely around the pasture, by repeatedly moving to the left, right, up or down to a neighboring cell. When a wolf enters a cell with a sheep, it consumes it. However, no wolf can enter a cell with a dog.</p><p>Initially there are no dogs. Place dogs onto the pasture in such a way that no wolf can reach any sheep, or determine that it is impossible. Note that since you have many dogs, you do <span class="tex-font-style-bf">not</span> need to minimize their number. </p></div><div class="input-specification"><div class="section-title">Input</div><p>First line contains two integers <span class="tex-span"><i>R</i></span> (<span class="tex-span">1 ≤ <i>R</i> ≤ 500</span>) and <span class="tex-span"><i>C</i></span> (<span class="tex-span">1 ≤ <i>C</i> ≤ 500</span>), denoting the number of rows and the numbers of columns respectively.</p><p>Each of the following <span class="tex-span"><i>R</i></span> lines is a string consisting of exactly <span class="tex-span"><i>C</i></span> characters, representing one row of the pasture. Here, '<span class="tex-font-style-tt">S</span>' means a sheep, '<span class="tex-font-style-tt">W</span>' a wolf and '<span class="tex-font-style-tt">.</span>' an empty cell.</p></div><div class="output-specification"><div class="section-title">Output</div><p>If it is impossible to protect all sheep, output a single line with the word "<span class="tex-font-style-tt">No</span>".</p><p>Otherwise, output a line with the word "<span class="tex-font-style-tt">Yes</span>". Then print <span class="tex-span"><i>R</i></span> lines, representing the pasture after placing dogs. Again, '<span class="tex-font-style-tt">S</span>' means a sheep, '<span class="tex-font-style-tt">W</span>' a wolf, '<span class="tex-font-style-tt">D</span>' is a dog and '<span class="tex-font-style-tt">.</span>' an empty space. You are not allowed to move, remove or add a sheep or a wolf.</p><p>If there are multiple solutions, you may print any of them. You don't have to minimize the number of dogs.</p></div><div class="sample-tests"><div class="section-title">Examples</div><div class="sample-test"><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id007842315378831679" id="id0027370919734916876" class="input-copier">Copy</div></div><pre id="id007842315378831679">6 6<br>..S...<br>..S.W.<br>.S....<br>..W...<br>...W..<br>......<br></pre></div><div class="output"><div class="title">Output</div><pre>Yes<br>..SD..<br>..SDW.<br>.SD...<br>.DW...<br>DD.W..<br>......<br></pre></div><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id004210582859878689" id="id005716349434105323" class="input-copier">Copy</div></div><pre id="id004210582859878689">1 2<br>SW<br></pre></div><div class="output"><div class="title">Output</div><pre>No<br></pre></div><div class="input"><div class="title">Input<div title="Copy" data-clipboard-target="#id004088616180862714" id="id005001898589950518" class="input-copier">Copy</div></div><pre id="id004088616180862714">5 5<br>.S...<br>...S.<br>S....<br>...S.<br>.S...<br></pre></div><div class="output"><div class="title">Output</div><pre>Yes<br>.S...<br>...S.<br>S.D..<br>...S.<br>.S...<br></pre></div></div></div><div class="note"><div class="section-title">Note</div><p>In the first example, we can split the pasture into two halves, one containing wolves and one containing sheep. Note that the sheep at (2,1) is safe, as wolves cannot move diagonally.</p><p>In the second example, there are no empty spots to put dogs that would guard the lone sheep.</p><p>In the third example, there are no wolves, so the task is very easy. We put a dog in the center to observe the peacefulness of the meadow, but the solution would be correct even without him.</p></div></div><p>  </p></div>
+</div>
+<blockquote>
+<p><em>嗨呀，鸽了好多天再来写博客，惭愧惭愧。</em></p>
+</blockquote>
+<h2 id="%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F">题目大意</h2>
+<blockquote>
+<p><strong>有一个R*C的矩阵，有的单元住着一只羊，有的单元住着一条狼，狼可以上下左右随便走，如果走到羊的格子，就会把羊吃掉，因此让你安排几条狗保护羊，狼不可以通过狗的格子，问你是否可以保护所有的羊（狗可以随便无限安排），如果可以打印出一种安排方法</strong></p>
+</blockquote>
+<h2 id="%E6%80%9D%E8%B7%AF">思路</h2>
+<blockquote>
+<p><em>很简单的思路，如果羊挨着狼，那么，无论狗怎么放，羊都会被吃掉，否则直接在羊的上下左右四周安排狗守着，狼就无法吃到狗了呀。签到题，就是这么简单。</em></p>
+</blockquote>
+<h2 id="%E4%BB%A3%E7%A0%81">代码</h2>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstring&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cmath&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stack&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;set&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;map&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;queue&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn=<span class="hljs-number">505</span>;
+<span class="hljs-keyword">char</span> im[maxn][maxn];
+<span class="hljs-keyword">int</span> r,c;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+	<span class="hljs-comment">// freopen("test.txt","r",stdin);</span>
+	<span class="hljs-comment">//freopen("test.out","w",stdout);</span>
+	
+	<span class="hljs-keyword">while</span>(~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;r,&amp;c)){
+		<span class="hljs-built_in">memset</span>(im,<span class="hljs-string">'.'</span>,<span class="hljs-keyword">sizeof</span>(im));
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=r;i++){
+			getchar();
+			<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=c;j++){
+				<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;im[i][j]);
+				<span class="hljs-comment">// printf("%c",im[i][j]);</span>
+			}
+			<span class="hljs-comment">// printf("\n");</span>
+		}
+		<span class="hljs-keyword">int</span> flag=<span class="hljs-number">0</span>;
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=r;i++){
+			<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=c;j++){
+				<span class="hljs-keyword">if</span>(im[i][j]==<span class="hljs-string">'S'</span>){
+					<span class="hljs-keyword">if</span>(im[i][j+<span class="hljs-number">1</span>]==<span class="hljs-string">'W'</span>||im[i][j<span class="hljs-number">-1</span>]==<span class="hljs-string">'W'</span>||im[i+<span class="hljs-number">1</span>][j]==<span class="hljs-string">'W'</span>||im[i<span class="hljs-number">-1</span>][j]==<span class="hljs-string">'W'</span>){
+						flag=<span class="hljs-number">1</span>;
+						<span class="hljs-built_in">printf</span>(<span class="hljs-string">"No\n"</span>);
+						<span class="hljs-keyword">break</span>;
+					}
+					<span class="hljs-keyword">else</span>{
+						<span class="hljs-keyword">if</span>(im[i][j+<span class="hljs-number">1</span>]==<span class="hljs-string">'.'</span>)
+							im[i][j+<span class="hljs-number">1</span>]=<span class="hljs-string">'D'</span>;
+						<span class="hljs-keyword">if</span>(im[i][j<span class="hljs-number">-1</span>]==<span class="hljs-string">'.'</span>)
+						im[i][j<span class="hljs-number">-1</span>]=<span class="hljs-string">'D'</span>;
+						<span class="hljs-keyword">if</span>(im[i<span class="hljs-number">-1</span>][j]==<span class="hljs-string">'.'</span>)
+						im[i<span class="hljs-number">-1</span>][j]=<span class="hljs-string">'D'</span>;
+						<span class="hljs-keyword">if</span>(im[i+<span class="hljs-number">1</span>][j]==<span class="hljs-string">'.'</span>)
+						im[i+<span class="hljs-number">1</span>][j]=<span class="hljs-string">'D'</span>;
+					}
+				}
+			}
+			<span class="hljs-keyword">if</span>(flag){
+				<span class="hljs-keyword">break</span>;
+			}
+		}
+		<span class="hljs-keyword">if</span>(!flag){
+			<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Yes\n"</span>);
+			<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=r;i++){
+				<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=c;j++){
+					<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>,im[i][j]);
+				}
+				<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+			}
+		}
+	}
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+
+    </body>
+    </html>

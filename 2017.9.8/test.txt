@@ -1,0 +1,9 @@
+4
+and
+abandon
+append
+island
+3
+ab*
+*nd
+a*nd
